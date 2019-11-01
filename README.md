@@ -24,6 +24,17 @@ I then copy the application to `/usr/local/bin` and that's all:
 sudo cp backlog /usr/local/bin
 ```
 
+# i3 Configuration
+
+I have the following shortcuts specified in my `$HOME/.config/i3/config`:
+
+```
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id /usr/local/bin/backlight  /sys/class/backlight/intel_backlight +100 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id /usr/local/bin/backlight  /sys/class/backlight/intel_backlight -100 # decrease screen brightness
+
+```
+
 # Requirements
 
 * C-compiler - tested with gcc (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0
