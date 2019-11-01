@@ -51,7 +51,7 @@ void apply_brightness(int brightness, char *device) {
 }
 
 int min(int a, int b) { return a > b ? b : a; }
-int min(int a, int b) { return a > b ? a : b; }
+int max(int a, int b) { return a > b ? a : b; }
 
 int main(int argc, char **argv) {
   if (argc < 3) {
@@ -71,7 +71,7 @@ int main(int argc, char **argv) {
 
   // clip brightness
   int new_brightness = min(current_brightness + change, max_brightness);
-  int new_brightness = max(new_brightness, 0);
+  new_brightness = max(new_brightness, 0);
 
   fprintf(stdout, "Brightness now: %d of %d; New: %d\n", current_brightness,
           max_brightness, new_brightness);
